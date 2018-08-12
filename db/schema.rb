@@ -17,19 +17,19 @@ ActiveRecord::Schema.define(version: 2018_08_11_205928) do
     t.integer "nausea_rating"
     t.integer "happiness_rating"
     t.integer "min_height"
+    t.integer "tickets"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "tickets"
   end
 
   create_table "rides", force: :cascade do |t|
-    t.integer "user"
-    t.integer "attraction"
+    t.integer "user_id"
+    t.integer "attraction_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "password"
+    t.string "password_digest"
     t.integer "nausea"
     t.integer "happiness"
     t.integer "tickets"
